@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeldSmart Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="brand">CATTLE<span class="highlight">YST</span></div>
+        <div class="partner-logos">
+            <img src="steg.png" alt="STEG">
+            <img src="tamu.jpeg" alt="AgriLife">
+            <img src="pretoria.png" alt="UP">
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>SCENARIO INPUTS</h2>
+                
+                <div class="control-group">
+                    <label>Rainfall Pattern</label>
+                    <input type="range" class="custom-range" min="0" max="100" value="25">
+                    <div class="range-labels">
+                        <span>Severe Drought</span>
+                        <span>Wet Cycle</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Herd Size</label>
+                    <input type="range" class="custom-range" min="0" max="100" value="75">
+                    <div class="range-labels">
+                        <span>Conservative</span>
+                        <span>Aggressive</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="sidebar-section">
+                <h2>POLICY TESTING</h2>
+
+                <div class="control-group">
+                    <label>Intervention Strategy</label>
+                    <div class="select-wrapper">
+                        <select class="policy-select">
+                            <option>Rotational Grazing Policy</option>
+                            <option>No Policy</option>
+                            <option>Feed Subsidies</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Policy Intensity</label>
+                    <input type="range" class="custom-range" min="0" max="100" value="60">
+                    <div class="range-labels">
+                        <span>Low Adherence</span>
+                        <span>Strict</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="version-footer">
+                Simulation Model v1.0<br>
+                Policy Impact Engine
+            </div>
+        </aside>
+
+        <main class="content-area">
+            
+            <div class="card chart-card">
+                <div class="chart-header">
+                    <h3>Net Farm Profitability: Baseline vs. Policy Scenario</h3>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="dot-bau"></div> 
+                            <span>Baseline Scenario</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="dot-adapt"></div> 
+                            <strong>Policy Intervention</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="graph-wrapper">
+                    <svg viewBox="0 0 800 280" preserveAspectRatio="none">
+                        <line x1="0" y1="50" x2="800" y2="50" class="grid-line" />
+                        <line x1="0" y1="150" x2="800" y2="150" class="grid-line" /> 
+                        <line x1="0" y1="250" x2="800" y2="250" class="grid-line" />
+
+                        <text x="5" y="40" class="axis-label">$ High Profit</text>
+                        <text x="5" y="240" class="axis-label">$ Low Profit</text>
+                        <text x="5" y="270" class="axis-label">Year 1</text>
+                        <text x="750" y="270" class="axis-label">Year 10</text>
+
+                        <path d="M 40 160 Q 120 130 180 140 T 280 120 L 320 240 L 380 260 L 450 180 T 600 170 T 780 220" 
+                              class="line-baseline" />
+
+                        <path d="M 40 170 C 150 160, 250 160, 350 150 S 550 120, 650 80 S 750 60, 780 50" 
+                              class="line-policy" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="bottom-row">
+                
+                <div class="card gauge-card">
+                    <h3>Est. Methane Emissions</h3>
+                    <div class="gauge-wrapper">
+                        <div class="gauge-arc"></div>
+                        <div class="gauge-inner"></div>
+                        <div class="needle needle-1"></div>
+                    </div>
+                    <div class="gauge-label">Moderate Reduction</div>
+                </div>
+
+                <div class="card gauge-card">
+                    <h3>Land Degradation Risk</h3>
+                    <div class="gauge-wrapper">
+                        <div class="gauge-arc"></div>
+                        <div class="gauge-inner"></div>
+                        <div class="needle needle-2"></div>
+                    </div>
+                    <div class="gauge-label">Low Risk</div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
